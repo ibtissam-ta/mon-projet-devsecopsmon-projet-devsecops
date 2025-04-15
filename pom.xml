@@ -14,16 +14,30 @@
     </properties>
 
     <dependencies>
- 
     </dependencies>
 
     <build>
         <plugins>
- 
+            <!-- Plugin de compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+            </plugin>
+
+            <!-- Plugin SpotBugs pour l'analyse statique -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.7.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

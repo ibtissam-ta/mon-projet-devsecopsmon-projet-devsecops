@@ -18,14 +18,15 @@
 
     <build>
         <plugins>
-            <!-- Plugin de compilation -->
+
+            <!-- Compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
             </plugin>
 
-            <!-- Plugin SpotBugs pour l'analyse statique -->
+            <!-- SpotBugs : Analyse de code statique -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
@@ -39,6 +40,21 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- OWASP Dependency-Check : Analyse de dépendances (SCA) -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>8.4.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 </project>
